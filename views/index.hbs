@@ -1,27 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- <script src="https://use.fontawesome.com/43b141b007.js"></script> -->
-  <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-  <link rel="stylesheet" href="./styles/main.css" charset="utf-8">
-  <title>Look up 45</title>
-</head>
-<div class="wrapper">
-<header>
-  <h1>Look up 45</h1>
-</header>
-</div>
-<body>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/45rpm.jpg" alt="this is an image" />
-</div>
-<section>
-  <form action="/" method="post">
-    Look up: <input type="text" name="id"><button>Go</button>
-  </form>
-  {{title}}
-</section>
-</form>
-</body>
+  <head>
+    <title>EDA Phase 1 Express Boilerplate</title>
+  </head>
+  <body>
+    <ul>
+    {{#each users}}
+      <li>{{name}} ({{email}})</li>
+    {{/each}}
+    </ul>
+  </body>
 </html>
