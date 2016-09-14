@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', index.get)
 app.get('/profile/:id', index.profile)
+app.post('/new-user', index.createUser)
 
 app.listen(PORT, function () {
   console.log('Listening on port', PORT)

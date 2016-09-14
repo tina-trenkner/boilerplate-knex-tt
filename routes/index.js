@@ -4,7 +4,8 @@ var knex = require('knex')(development)
 
 module.exports = {
   get: get,
-  profile: profile
+  profile: profile,
+  createUser: createUser
 }
 
 function get (req, res) {
@@ -28,5 +29,20 @@ function profile (req, res) {
     })
     .catch(function (err) {
       res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+}
+
+function createUser (req, res) {
+  knex('users')
+    .insert({name: req.body.name, email: req.body.email})
+    .then(function (ids) {
+      return knex('profiles')
+        .insert({user_id: ids[0], url: req.body.url, school: req.body.school})
+    })
+    .then(function () {
+      res.redirect('/')
+    })
+    .catch(function (err) {
+      res.status(500).send(err.message)
     })
 }
