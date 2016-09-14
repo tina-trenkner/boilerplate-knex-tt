@@ -5,9 +5,12 @@
   </head>
   <body>
     <ul>
-    {{#each users}}
-      <li>{{name}} ({{email}})</li>
-    {{/each}}
+      <table style="width=100%", border="1">
+      {{#each users}}
+      <tr><td><a href="profile/{{id}}">{{name}}</a></td>
+      <td>{{email}}</td></tr>
+      {{/each}}
+      </table>
     </ul>
   </body>
 </html>
