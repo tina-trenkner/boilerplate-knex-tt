@@ -1,8 +1,9 @@
 exports.up = function (knex, Promise) {
   return knex.schema.createTable('profiles', function (table) {
-    table.increments('user_id').primary()
+    table.increments('id').primary()
     table.string('url')
     table.string('school')
+    table.integer('user_id').references('users.id')
   })
 }
 
